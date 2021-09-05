@@ -3,7 +3,7 @@
 [BEGIN_COT_EXT]
 Name=Recent user posts in forums
 Description=Will display the newest post in forums from the user
-Version=0.0.3
+Version=0.0.4
 Date=2014-sep-14
 Author=Neocrome & Cotonti Team, dayver, esclkm
 Copyright=Partial copyright (c) 2014 Cotonti Team
