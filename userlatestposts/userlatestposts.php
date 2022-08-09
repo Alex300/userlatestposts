@@ -66,7 +66,7 @@ if ($cot_modules['forums'] && !$disable) {
 		while ($row = $sqluserlatestposts->fetch()) {
 			if (cot_auth('forums', $row['ft_cat'], 'R')) {
 				$ii++;
-				$build_forum = cot_breadcrumbs(cot_forums_buildpath($row['ft_cat'], false), false);
+				$build_forum = cot_breadcrumbs(cot_forums_buildpath($row['ft_cat'], false), false, false);
                 //------ Added by Alex ---------
                 // Выдержка с поста
                 $len_cut = 500;  // Длина выдержки с поста (символов)
@@ -75,6 +75,7 @@ if ($cot_modules['forums'] && !$disable) {
                 $row['fp_text'] = preg_replace("'<[\/\!]*?[^<>]*?>'si", "", $row['fp_text']);
                 $row['fp_text'] = cot_string_truncate($row['fp_text'], $len_cut, true, false, '...');
                 // /Выдержка с поста
+
 				$user_posts->assign(array(
 					"UPF_DATE" => cot_date('datetime_medium', $row['fp_updated']),
 					"UPF_FORUMS" => $build_forum,
